@@ -23,7 +23,9 @@
 
 /*
  Add your beacon UUID here
+ (This is my Beacon UUID, should you ever visit.)
  */
+
 static NSString *kBeaconUUID = @"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0";
 
 - (void)viewDidLoad
