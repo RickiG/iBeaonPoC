@@ -21,6 +21,12 @@
 		9D13AB6818CB38AB00CDACC6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D13AB4A18CB38AB00CDACC6 /* UIKit.framework */; };
 		9D13AB7018CB38AB00CDACC6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D13AB6E18CB38AB00CDACC6 /* InfoPlist.strings */; };
 		9D13AB7218CB38AB00CDACC6 /* iBeaconPocTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13AB7118CB38AB00CDACC6 /* iBeaconPocTests.m */; };
+		9D13AB7C18CB38E600CDACC6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D13AB7B18CB38E600CDACC6 /* CoreLocation.framework */; };
+		9D13AB8718CB94FB00CDACC6 /* RGStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D13AB8618CB94FB00CDACC6 /* RGStatusView.m */; };
+		9D13AB8D18CB978700CDACC6 /* unknown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D13AB8918CB978700CDACC6 /* unknown.jpg */; };
+		9D13AB8E18CB978700CDACC6 /* close.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D13AB8A18CB978700CDACC6 /* close.jpg */; };
+		9D13AB8F18CB978700CDACC6 /* faraway.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D13AB8B18CB978700CDACC6 /* faraway.jpg */; };
+		9D13AB9118CBB13E00CDACC6 /* near.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9D13AB9018CBB13E00CDACC6 /* near.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,13 @@
 		9D13AB6D18CB38AB00CDACC6 /* iBeaconPocTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBeaconPocTests-Info.plist"; sourceTree = "<group>"; };
 		9D13AB6F18CB38AB00CDACC6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9D13AB7118CB38AB00CDACC6 /* iBeaconPocTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBeaconPocTests.m; sourceTree = "<group>"; };
+		9D13AB7B18CB38E600CDACC6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9D13AB8518CB94FB00CDACC6 /* RGStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGStatusView.h; sourceTree = "<group>"; };
+		9D13AB8618CB94FB00CDACC6 /* RGStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGStatusView.m; sourceTree = "<group>"; };
+		9D13AB8918CB978700CDACC6 /* unknown.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = unknown.jpg; sourceTree = "<group>"; };
+		9D13AB8A18CB978700CDACC6 /* close.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = close.jpg; sourceTree = "<group>"; };
+		9D13AB8B18CB978700CDACC6 /* faraway.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = faraway.jpg; sourceTree = "<group>"; };
+		9D13AB9018CBB13E00CDACC6 /* near.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = near.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D13AB7C18CB38E600CDACC6 /* CoreLocation.framework in Frameworks */,
 				9D13AB4918CB38AB00CDACC6 /* CoreGraphics.framework in Frameworks */,
 				9D13AB4B18CB38AB00CDACC6 /* UIKit.framework in Frameworks */,
 				9D13AB4718CB38AB00CDACC6 /* Foundation.framework in Frameworks */,
@@ -101,6 +115,7 @@
 		9D13AB4518CB38AB00CDACC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9D13AB7B18CB38E600CDACC6 /* CoreLocation.framework */,
 				9D13AB4618CB38AB00CDACC6 /* Foundation.framework */,
 				9D13AB4818CB38AB00CDACC6 /* CoreGraphics.framework */,
 				9D13AB4A18CB38AB00CDACC6 /* UIKit.framework */,
@@ -117,6 +132,8 @@
 				9D13AB5818CB38AB00CDACC6 /* Main.storyboard */,
 				9D13AB5B18CB38AB00CDACC6 /* RGViewController.h */,
 				9D13AB5C18CB38AB00CDACC6 /* RGViewController.m */,
+				9D13AB8518CB94FB00CDACC6 /* RGStatusView.h */,
+				9D13AB8618CB94FB00CDACC6 /* RGStatusView.m */,
 				9D13AB5E18CB38AB00CDACC6 /* Images.xcassets */,
 				9D13AB4D18CB38AB00CDACC6 /* Supporting Files */,
 			);
@@ -126,6 +143,10 @@
 		9D13AB4D18CB38AB00CDACC6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9D13AB9018CBB13E00CDACC6 /* near.jpg */,
+				9D13AB8918CB978700CDACC6 /* unknown.jpg */,
+				9D13AB8A18CB978700CDACC6 /* close.jpg */,
+				9D13AB8B18CB978700CDACC6 /* faraway.jpg */,
 				9D13AB4E18CB38AB00CDACC6 /* iBeaconPoc-Info.plist */,
 				9D13AB4F18CB38AB00CDACC6 /* InfoPlist.strings */,
 				9D13AB5218CB38AB00CDACC6 /* main.m */,
@@ -200,6 +221,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = rickigregersen.com;
 				TargetAttributes = {
+					9D13AB4218CB38AB00CDACC6 = {
+						DevelopmentTeam = YAN243KQGA;
+					};
 					9D13AB6318CB38AB00CDACC6 = {
 						TestTargetID = 9D13AB4218CB38AB00CDACC6;
 					};
@@ -229,7 +253,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D13AB8E18CB978700CDACC6 /* close.jpg in Resources */,
+				9D13AB9118CBB13E00CDACC6 /* near.jpg in Resources */,
+				9D13AB8F18CB978700CDACC6 /* faraway.jpg in Resources */,
 				9D13AB5F18CB38AB00CDACC6 /* Images.xcassets in Resources */,
+				9D13AB8D18CB978700CDACC6 /* unknown.jpg in Resources */,
 				9D13AB5118CB38AB00CDACC6 /* InfoPlist.strings in Resources */,
 				9D13AB5A18CB38AB00CDACC6 /* Main.storyboard in Resources */,
 			);
@@ -251,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D13AB5318CB38AB00CDACC6 /* main.m in Sources */,
+				9D13AB8718CB94FB00CDACC6 /* RGStatusView.m in Sources */,
 				9D13AB5718CB38AB00CDACC6 /* RGAppDelegate.m in Sources */,
 				9D13AB5D18CB38AB00CDACC6 /* RGViewController.m in Sources */,
 			);
