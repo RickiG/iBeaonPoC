@@ -3,7 +3,7 @@
 //  iBeaconPoc
 //
 //  Created by Ricki Gregersen on 08/03/14.
-//  Copyright (c) 2014 rickigregersen.com. All rights reserved.
+//  Copyright (c) 2014 rickigregersen.com. No rights reserved.
 //
 
 #import <UIKit/UIKit.h>

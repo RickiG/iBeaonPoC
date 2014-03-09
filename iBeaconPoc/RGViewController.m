@@ -3,7 +3,7 @@
 //  iBeaconPoc
 //
 //  Created by Ricki Gregersen on 08/03/14.
-//  Copyright (c) 2014 rickigregersen.com. All rights reserved.
+//  Copyright (c) 2014 rickigregersen.com. No rights reserved.
 //
 
 #import "RGViewController.h"
@@ -21,25 +21,30 @@
 
 @implementation RGViewController
 
+/*
+ Add your beacon UUID here
+ */
+static NSString *kBeaconUUID = @"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0";
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    
+
     self.statusTextView.font = [UIFont fontWithName:@"Courier-Bold" size:17.0f];
     self.statusTextView.text = @"Searching for iBeacon";
     self.statusTextView.textColor = [UIColor greenColor];
+    
     [self.statusImageView updateStateImagesWithState:0 animated:NO];
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self setupRegion];
-    
 }
 
 - (void) setupRegion
 {
-    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"];
-    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.rickigregersen.hood"];
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:kBeaconUUID];
+    self.beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"com.wherever.whenever"];
     [self.locationManager startMonitoringForRegion:self.beaconRegion];
 }
 
@@ -47,6 +52,9 @@
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
+    /*
+     Will in turn call -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region repeatedly 
+     */
     [self.locationManager startRangingBeaconsInRegion:self.beaconRegion];
 }
 
@@ -58,11 +66,21 @@
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
     CLBeacon *beacon = [[CLBeacon alloc] init];
+    /*
+     Here only last beacon is used:
+     use beacon.proximityUUID, beacon.major and beacon.minor to get
+     a specific beacon. Also beacon.proximity might be used to
+     decide which beacon is closest
+     */
     beacon = [beacons lastObject];
     
     [self updateStatusFromBeacon:beacon];
 }
 
+/*
+ Pull status information from the beacon that is 
+ in range
+ */
 - (void) updateStatusFromBeacon:(CLBeacon*) beacon
 {
     NSMutableString *statusString = [NSMutableString string];

@@ -3,7 +3,7 @@
 //  iBeaconPoc
 //
 //  Created by Ricki Gregersen on 08/03/14.
-//  Copyright (c) 2014 rickigregersen.com. All rights reserved.
+//  Copyright (c) 2014 rickigregersen.com. No rights reserved.
 //
 
 #import "RGStatusView.h"
@@ -41,7 +41,7 @@
 {
     [_stateImages enumerateObjectsUsingBlock:^(UIImageView *imgView, NSUInteger idx, BOOL *stop) {
        
-        CGPoint targetPoint = (idx == state ? self.center : [self randomPointOutsideOfScreen]);
+        CGPoint targetPoint = (idx == state ? self.center : [self pointOutsideOfScreen]);
         
         if (animated) {
          
@@ -69,29 +69,15 @@ static CGFloat imageHeight = 300.0f;
     UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imagePath]];
     imgView.contentMode = UIViewContentModeScaleAspectFit;
     imgView.frame = CGRectMake(0.0f, 0.0f, imageWidth, imageHeight);
-    imgView.center = [self randomPointOutsideOfScreen];
+    imgView.center = [self pointOutsideOfScreen];
     [self addSubview:imgView];
     
     return imgView;
 }
 
-#define ARC4RANDOM_MAX      0x100000000
-
-- (CGPoint) randomPointOutsideOfScreen
+- (CGPoint) pointOutsideOfScreen
 {
     return CGPointMake(self.center.x, -1 * imageHeight * 0.5f);
-    return CGPointMake(self.center.x, CGRectGetHeight(self.frame) + imageHeight * 0.5f);
-    
-    CGFloat minX = CGRectGetWidth(self.frame) + imageWidth * 0.5f;
-    CGFloat maxX = CGRectGetWidth(self.frame) + imageWidth;
-
-    CGFloat minY = CGRectGetHeight(self.frame) + imageHeight * 0.5f;
-    CGFloat maxY = CGRectGetHeight(self.frame) + imageHeight;
-    
-    CGFloat xPos = ((float)arc4random() / ARC4RANDOM_MAX * (maxX - minX)) + minX;
-    CGFloat yPos = ((float)arc4random() / ARC4RANDOM_MAX * (maxY - minY)) + minY;
-    
-    return (CGPoint){xPos, yPos};
 }
 
 @end
